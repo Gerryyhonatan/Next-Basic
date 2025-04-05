@@ -7,16 +7,7 @@ import useSWR from "swr";
 
 
 const ProductPage = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isLogin, setIsLogin] = useState(true);
-//   const [products, setProducts] = useState([]);
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!isLogin) {
-      router.push("/auth/login");
-    }
-  }, []);
+  // const [products, setProducts] = useState([]);
 
   const { data, isLoading } = useSWR("/api/product", fetcher);
 
