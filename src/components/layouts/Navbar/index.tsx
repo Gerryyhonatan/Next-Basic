@@ -6,8 +6,12 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div>Navbar</div>
-      <div>
+      <div className={styles.profile}>
         {data && data.user.fullname}{" "}
+        {data?.user?.image && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img className={styles.avatar} src={data.user.image} alt={data.user.fullname} />
+        )}
         {data ? (
           <button className={styles.button} onClick={() => signOut()}>Sign Out</button>
         ) : (
